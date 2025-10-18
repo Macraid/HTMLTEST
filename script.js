@@ -2,8 +2,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const labels = document.querySelectorAll('.label');
     const cells = document.querySelectorAll('.seating-chart td');
     const printButton = document.getElementById('print-button');
+    const editModeRadios = document.querySelectorAll('input[name="edit-mode"]');
 
     let draggedLabel = null;
+
+    const setLabelsEditable = (isEditable) => {
+        labels.forEach(label => {
+            label.setAttribute('contenteditable', isEditable);
+        });
+    };
+
+    editModeRadios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            setLabelsEditable(e.target.value === 'editable');
+        });
+    });
 
     labels.forEach(label => {
         label.addEventListener('dragstart', (e) => {

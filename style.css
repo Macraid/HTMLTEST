@@ -76,6 +76,13 @@ body {
     background-color: #0056b3;
 }
 
+.edit-controls {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 @media print {
     body {
         visibility: hidden;
