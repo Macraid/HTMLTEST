@@ -1,0 +1,48 @@
+body {
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.table-container {
+    flex-grow: 2;
+}
+
+.seating-chart {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.seating-chart td {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.labels-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    height: fit-content;
+}
+
+.label {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: grab;
+    text-align: center;
+}
+
+.label:active {
+    cursor: grabbing;
+}
