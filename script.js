@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const setLabelsEditable = (isEditable) => {
         labels.forEach(label => {
             label.setAttribute('contenteditable', isEditable);
+            // Draggable attribute interferes with contenteditable, so we toggle it.
+            label.setAttribute('draggable', !isEditable);
         });
     };
 
