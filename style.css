@@ -10,6 +10,17 @@ body {
 
 .table-container {
     flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teacher-desk {
+    border: 1px solid black;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 100px; /* This is equivalent to one cell height */
 }
 
 .seating-chart {
@@ -45,4 +56,43 @@ body {
 
 .label:active {
     cursor: grabbing;
+}
+
+.controls-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#print-button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#print-button:hover {
+    background-color: #0056b3;
+}
+
+@media print {
+    body {
+        visibility: hidden;
+    }
+
+    #printable-area, #printable-area * {
+        visibility: visible;
+    }
+
+    #printable-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    .controls-container {
+        display: none;
+    }
 }

@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const labels = document.querySelectorAll('.label');
     const cells = document.querySelectorAll('.seating-chart td');
+    const printButton = document.getElementById('print-button');
 
     let draggedLabel = null;
 
@@ -41,5 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.target.appendChild(draggedLabel);
             }
         });
+    });
+
+    printButton.addEventListener('click', () => {
+        window.print();
     });
 });
